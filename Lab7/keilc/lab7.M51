@@ -1,0 +1,95 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/21/2019  14:26:24  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE lab7.obj TO lab7
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  lab7.obj (LAB7)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  lab7 (LAB7)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?LAB7
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001FH     UNIT         ?PR?MAIN?LAB7
+            CODE    0022H     000CH     UNIT         ?C_C51STARTUP
+            CODE    002EH     000BH     UNIT         ?PR?_DELAY?LAB7
+
+
+
+OVERLAY MAP OF MODULE:   lab7 (LAB7)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LAB7
+
+?PR?MAIN?LAB7
+  +--> ?PR?_DELAY?LAB7
+
+
+
+SYMBOL TABLE OF MODULE:  lab7 (LAB7)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LAB7
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:0020H.0       PUBLIC        Button_Old
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0003H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/21/2019  14:26:24  PAGE 2
+
+
+  B:00A0H.7       PUBLIC        LED
+  B:00B0H.7       PUBLIC        BUTTON
+  C:002EH         PUBLIC        _Delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        vrui_Time
+  C:002EH         LINE#         7
+  C:002EH         LINE#         8
+  C:002EH         LINE#         9
+  C:0038H         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:0003H         LINE#         12
+  C:0003H         LINE#         13
+  C:0003H         LINE#         14
+  C:0003H         LINE#         15
+  C:0003H         LINE#         17
+  C:0006H         LINE#         18
+  C:0006H         LINE#         20
+  C:000DH         LINE#         25
+  C:0013H         LINE#         26
+  C:0013H         LINE#         31
+  C:0015H         LINE#         32
+  C:0015H         LINE#         33
+  C:0015H         LINE#         35
+  C:0019H         LINE#         36
+  C:0020H         LINE#         37
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LAB7
+
+Program Size: data=9.1 xdata=0 code=57
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

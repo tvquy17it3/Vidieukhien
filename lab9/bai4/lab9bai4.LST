@@ -1,0 +1,55 @@
+C51 COMPILER V9.00   LAB9BAI4                                                              04/11/2019 10:12:09 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LAB9BAI4
+OBJECT MODULE PLACED IN lab9bai4.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lab9bai4.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          // Dinh nghia cho chan so 0 cua port P1
+   3          #define LED_PORT P2
+   4          void delay_50ms(void);
+   5          void main(void)
+   6          {
+   7   1      unsigned char i;
+   8   1      LED_PORT = 0x00;
+   9   1      while(1)
+  10   1      {
+  11   2      for(i = 0; i<5; i++)
+  12   2      {
+  13   3              LED_PORT =~ LED_PORT;
+  14   3              delay_50ms();
+  15   3      }
+  16   2      }
+  17   1      
+  18   1      }
+  19          void delay_50ms(void)
+  20          {
+  21   1      TMOD = 0x10; // Buoc 1: Nap gia tri cho thanh ghi TMOD
+  22   1      TH1 = 0x3C; // Buoc 2: Gia tri can nap cho 2 thanh ghi la 0xFC17
+  23   1      TL1 = 0xAF; // Do vay TH chua 2 byte cao, TL chua 2 byte
+  24   1      TR1 = 1; // Buoc 3: Khoi dong Timer0
+  25   1      while(TF1 == 0){ // Buoc 4: Kiem tra co TF0 chua len 1 thi khong
+  26   2      ;
+  27   2      }
+  28   1      TR1 = 0; // Buoc 5: Dung bo dinh thoi
+  29   1      TF1 = 0; // Buoc 6: Xoa co TF
+  30   1      // Buoc 7: Nap lai gia tri trong bai nay khong can
+  31   1      
+  32   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     42    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

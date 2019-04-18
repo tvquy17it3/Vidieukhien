@@ -1,0 +1,52 @@
+C51 COMPILER V9.00   LAB9                                                                  04/11/2019 09:18:54 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LAB9
+OBJECT MODULE PLACED IN lab9.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lab9.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          // Dinh nghia cho chan so 0 cua port P1
+   3          sbit LED = P1^5;
+   4          void delay_50ms(void);
+   5          void main(void)
+   6          {
+   7   1      while(1)
+   8   1      {
+   9   2      LED = 0;
+  10   2      delay_50ms();
+  11   2      LED = 1;
+  12   2      delay_50ms();
+  13   2      }
+  14   1      
+  15   1      }
+  16          void delay_50ms(void)
+  17          {
+  18   1      TMOD = 0x01; // Buoc 1: Nap gia tri cho thanh ghi TMOD
+  19   1      TH0 = 0x3C; // Buoc 2: Gia tri can nap cho 2 thanh ghi la 0xFC17
+  20   1      TL0 = 0xAF; // Do vay TH chua 2 byte cao, TL chua 2 byte
+  21   1      TR0 = 1; // Buoc 3: Khoi dong Timer0
+  22   1      while(TF0 == 0){ // Buoc 4: Kiem tra co TF0 chua len 1 thi khong
+  23   2      ;
+  24   2      }
+  25   1      TR0 = 0; // Buoc 5: Dung bo dinh thoi
+  26   1      TF0 = 0; // Buoc 6: Xoa co TF
+  27   1      // Buoc 7: Nap lai gia tri trong bai nay khong can
+  28   1      
+  29   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     31    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

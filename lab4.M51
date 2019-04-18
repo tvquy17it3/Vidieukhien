@@ -1,0 +1,85 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/10/2019  14:21:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE lab4.obj TO lab4
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  lab4.obj (LAB4)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  lab4 (LAB4)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001CH     UNIT         ?PR?MAIN?LAB4
+            CODE    001FH     000CH     UNIT         ?C_C51STARTUP
+            CODE    002BH     000BH     UNIT         ?PR?_FN_DELAY?LAB4
+
+
+
+OVERLAY MAP OF MODULE:   lab4 (LAB4)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LAB4
+
+?PR?MAIN?LAB4
+  +--> ?PR?_FN_DELAY?LAB4
+
+
+
+SYMBOL TABLE OF MODULE:  lab4 (LAB4)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LAB4
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:002BH         PUBLIC        _Fn_Delay
+  C:0003H         PUBLIC        main
+  -------         PROC          _FN_DELAY
+  D:0006H         SYMBOL        _vrui_Time
+  C:002BH         LINE#         3
+  C:002BH         LINE#         4
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/10/2019  14:21:02  PAGE 2
+
+
+  C:002BH         LINE#         5
+  C:0035H         LINE#         6
+  -------         ENDPROC       _FN_DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         8
+  C:0003H         LINE#         9
+  C:0003H         LINE#         11
+  C:0003H         LINE#         12
+  C:0003H         LINE#         13
+  C:0005H         LINE#         14
+  C:0005H         LINE#         15
+  C:0012H         LINE#         16
+  C:0019H         LINE#         18
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LAB4
+
+Program Size: data=9.0 xdata=0 code=54
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

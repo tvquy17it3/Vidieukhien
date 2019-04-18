@@ -1,0 +1,107 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/21/2019  13:20:37  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE lab42.obj TO lab4-2 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  lab42.obj (LAB42)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  lab4-2 (LAB42)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?LAB42
+            DATA    0012H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0013H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0060H     UNIT         ?PR?MAIN?LAB42
+            CODE    0063H     0013H     UNIT         ?PR?_DELAY?LAB42
+            CODE    0076H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   lab4-2 (LAB42)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?LAB42
+
+?PR?MAIN?LAB42                 -----    -----
+  +--> ?PR?_DELAY?LAB42
+
+?PR?_DELAY?LAB42               0012H    0001H
+
+
+
+SYMBOL TABLE OF MODULE:  lab4-2 (LAB42)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LAB42
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0063H         PUBLIC        _delay
+  C:0003H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/21/2019  13:20:37  PAGE 2
+
+
+  D:0008H         PUBLIC        a
+  D:0009H         PUBLIC        b
+  D:000AH         PUBLIC        c
+  D:000BH         PUBLIC        d
+  D:000CH         PUBLIC        i
+  D:000EH         PUBLIC        j
+  D:0010H         PUBLIC        k
+  -------         PROC          _DELAY
+  D:0007H         SYMBOL        time
+  -------         DO            
+  D:0012H         SYMBOL        j
+  -------         ENDDO         
+  C:0063H         LINE#         4
+  C:0063H         LINE#         5
+  C:0069H         LINE#         6
+  C:0069H         LINE#         7
+  C:006CH         LINE#         8
+  C:0075H         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:0003H         LINE#         11
+  C:0003H         LINE#         12
+  C:0003H         LINE#         13
+  C:0003H         LINE#         14
+  C:0003H         LINE#         15
+  C:000CH         LINE#         16
+  C:0010H         LINE#         17
+  C:0010H         LINE#         18
+  C:001EH         LINE#         19
+  C:002EH         LINE#         20
+  C:002EH         LINE#         21
+  C:0031H         LINE#         22
+  C:0035H         LINE#         23
+  C:0038H         LINE#         24
+  C:003DH         LINE#         25
+  C:0040H         LINE#         26
+  C:0046H         LINE#         27
+  C:0050H         LINE#         28
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LAB42
+
+Program Size: data=20.0 xdata=0 code=130
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,44 @@
+C51 COMPILER V9.00   LAB10BAI1                                                             04/18/2019 09:09:49 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LAB10BAI1
+OBJECT MODULE PLACED IN lab10bai1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lab10bai1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>  
+   2           // Dinh nghia cho chan so 0 cua port P1 
+   3           sbit LED = P1^0;   
+   4           // Chuong trinh chinh 
+   5           void main(void) {     
+   6   1               EA  = 1;             
+   7   1               // Cho phep tat ca cac ngat hoat dong     
+   8   1               EX0 = 1;             
+   9   1               // Cho phep ngat ngoai 0     
+  10   1               IT0 = 1;             
+  11   1               
+  12   1               // Thiet lap ngat ngoai 0 cho suon am      
+  13   1                while(1){;} 
+  14   1        }   
+  15            // Trinh phuc vu ngat 
+  16            void ten_tuy_chon(void) interrupt 0 
+  17            // Khai bao trinh phuc vu ngat cho ngat ngoai 0 
+  18            {                
+  19   1              LED = ~LED;         
+  20   1        // Thay doi trang thai cua LED 
+  21   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     11    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

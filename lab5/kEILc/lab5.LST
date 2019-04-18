@@ -1,0 +1,79 @@
+C51 COMPILER V9.00   LAB5                                                                  02/14/2019 14:33:01 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LAB5
+OBJECT MODULE PLACED IN lab5.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lab5.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          sbit LED1 = P3^0;
+   3          sbit LED2 = P3^1;
+   4          sbit LED3 = P3^2;
+   5          sbit LED4 = P3^3;
+   6          unsigned char LED7SEG[10] =
+   7          {0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+   8          void Fn_Delay (unsigned int _vrui_Time)
+   9          {
+  10   1      while(_vrui_Time--);
+  11   1      }
+  12          void main (void)
+  13          {
+  14   1      unsigned char i,k,d;
+  15   1      unsigned int j;
+  16   1      LED1 = 0;
+  17   1      LED2 = 0;
+  18   1      LED3 = 0;
+  19   1      LED4 = 0;
+  20   1      while(1)
+  21   1      {/* Hien thi so i chay tu 00 den 99 */
+  22   2      for(i = 0; i < 10000; i++)
+  23   2      {
+  24   3      /* Voi moi so i hien thi 200 lan */
+  25   3      for (j = 0; j < 200; j++)
+  26   3      {
+  27   4      /* Hien thi phan chuc cua so */
+  28   4      P2 = LED7SEG[i/1000];
+  29   4      k = i%1000;
+  30   4      LED1 = 1;
+  31   4      Fn_Delay(10);
+  32   4      LED1 = 0;
+  33   4      /* Ket thuc hien thi phan chuc */
+  34   4      /* Hien thi phan don vi cua so */
+  35   4      P2 = LED7SEG[k/100];
+  36   4      d = k%100;
+  37   4      LED2 = 1;
+  38   4      Fn_Delay(10);
+  39   4      LED2 = 0;
+  40   4      
+  41   4      P2 = LED7SEG[d/10];
+  42   4      LED3 = 1;
+  43   4      Fn_Delay(10);
+  44   4      LED3 = 0;
+  45   4      /*as*/
+  46   4      P2 = LED7SEG[d%10];
+  47   4      LED4 = 1;
+  48   4      Fn_Delay(10);
+  49   4      LED4 = 0;
+  50   4      /* Ket thuc hien thi phan don vi */
+  51   4      }
+  52   3      }
+  53   2      }
+  54   1      }
+
+C51 COMPILER V9.00   LAB5                                                                  02/14/2019 14:33:01 PAGE 2   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    160    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

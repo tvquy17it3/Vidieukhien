@@ -1,0 +1,87 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/10/2019  14:49:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE lab4-2.obj TO Lab4-2
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  lab4-2.obj (LAB4_2)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  Lab4-2 (LAB4_2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0012H     UNIT         ?PR?MAIN?LAB4_2
+            CODE    0015H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0021H     000BH     UNIT         ?PR?_TIMING?LAB4_2
+
+
+
+OVERLAY MAP OF MODULE:   Lab4-2 (LAB4_2)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?LAB4_2
+
+?PR?MAIN?LAB4_2                0008H    0002H
+  +--> ?PR?_TIMING?LAB4_2
+
+
+
+SYMBOL TABLE OF MODULE:  Lab4-2 (LAB4_2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LAB4_2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0003H         PUBLIC        main
+  C:0021H         PUBLIC        _Timing
+  -------         PROC          _TIMING
+  D:0006H         SYMBOL        i
+  C:0021H         LINE#         3
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/10/2019  14:49:11  PAGE 2
+
+
+  C:0021H         LINE#         4
+  C:0021H         LINE#         5
+  C:002BH         LINE#         6
+  -------         ENDPROC       _TIMING
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  D:0009H         SYMBOL        j
+  -------         ENDDO         
+  C:0003H         LINE#         8
+  C:0003H         LINE#         9
+  C:0003H         LINE#         10
+  C:0006H         LINE#         11
+  C:0009H         LINE#         12
+  C:0009H         LINE#         13
+  C:0009H         LINE#         14
+  C:000CH         LINE#         15
+  C:0013H         LINE#         17
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LAB4_2
+
+Program Size: data=11.0 xdata=0 code=44
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

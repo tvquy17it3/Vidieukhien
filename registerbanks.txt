@@ -1,0 +1,57 @@
+8
+
+Program Status Word (PSW)
+Word Status Word (PSW) ch?a các bit tr?ng thái ph?n ánh tr?ng thái CPU hi?n t?i. 
+Các bi?n th? 8051 cung c?p m?t thanh ghi ch?c nang d?c bi?t 
+g?i là PSW v?i thông tin tr?ng thái này. 251 cung c?p hai c? tr?ng thái b? sung,
+Z và N, có s?n trong m?t thanh ghi ch?c nang d?c bi?t th? hai du?c g?i là PSW1.
+
+L?nh SETB d?t toán h?ng bit thành giá tr? 1.
+L?nh CLR d?t toán h?ng dích dã ch? d?nh thành giá tr? 0.
+
+RS1 RS0 Working Register Bank and Address
+0 0 Bank0 (D:0x00 - D:0x07)
+0 1 Bank1 (D:0x08 - D:0x0F)
+1 0 Bank2 (D:0x10 - D:0x17)
+1 1 Bank3 (D:0x18H - D:0x1F)
+
+CY	Carry flag
+AC	Auxiliary Carry flag (For BCD Operations)
+F0	Flag 0 (Available to the user for General Purpose)
+RS1,
+RS0	Register bank select:
+	RS1 RS0 Working Register Bank and Address
+	0 0 Bank0 (D:0x00 - D:0x07)
+	0 1 Bank1 (D:0x08 - D:0x0F)
+	1 0 Bank2 (D:0x10 - D:0x17)
+	1 1 Bank3 (D:0x18H - D:0x1F)
+0V	Overflow flag
+UD	User definable flag
+P	Parity flag
+—	Reserved for future use (251 Only)
+Z	Zero flag (251 Only)
+N	Negative flag (251 Only)
+
+32byte 4 banks
+1 banks 8 register
+
+
+Vi?t t?t	RB
+
+L?p lu?n	M?t s? trong ph?m vi 0-3 du?c d?t trong ngo?c don.
+
+M?c d?nh	ÐANG KÝ (0)
+
+Tiêu chí	Tùy ch?n - C51 - Ði?u khi?n linh tinh.
+
+S? miêu t?	L?nh REGISTERBANK ch?n ngân hàng dang ký s? s? d?ng cho các ch?c nang 
+		ti?p theo du?c khai báo trong t?p ngu?n. Mã k?t qu? có th? s? d?ng hình th?c 
+		truy c?p dang ký tuy?t d?i khi s? lu?ng dang ký tuy?t d?i có th? du?c tính toán. 
+		Các s? d?ng ch?c nang thu?c tính thay th? cho nh?ng ?nh hu?ng c?a REGISTERBANK ch? th?.
+
+ chú thích
+Không gi?ng nhu thu?c tính ch?c nang s? d?ng , di?u khi?n REGISTERBANK không chuy?n d?i ngân hàng dang ký.
+Các hàm tr? v? giá tr? cho ngu?i g?i ph?i luôn s? d?ng cùng m?t ngân hàng dang ký nhu ngu?i g?i. 
+N?u các ngân hàng dang ký không gi?ng nhau, các giá tr? tr? v? có th? du?c tr? l?i trong s? dang ký c?a 
+ngân hàng dang ký sai.
+L?nh REGISTERBANK có th? xu?t hi?n nhi?u l?n trong m?t chuong trình ngu?n. Tuy nhiên, nó ch? có th? du?c ch? d?nh bên ngoài m?t d?nh nghia hàm (vì nó ?nh hu?ng d?n mã du?c t?o cho toàn b? hàm). L?nh du?c b? qua n?u du?c s? d?ng trong m?t khai báo hàm.

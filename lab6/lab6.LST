@@ -1,0 +1,96 @@
+C51 COMPILER V9.00   LAB6                                                                  03/13/2019 22:44:59 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LAB6
+OBJECT MODULE PLACED IN lab6.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lab6.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1           #include <REGX51.H>
+   2          /* Ma hien thi chu H */
+   3          unsigned char code H[240] ={0xFF,0xFF,0x18,0x18,0x18,0x18,0xFF,0xFF,
+   4                                                                  0x3c,0x24,0x24,0x24,0x24,0x24,0x24,0x3c,  //0
+   5                                                                  0x3e,0x08,0x08,0x08,0x08,0x28,0x18,0x08,        //1
+   6                                                                  0x7c,0x20,0x10,0x08,0x04,0x04,0x44,0x38,        //2
+   7                                                                  0x3c,0x04,0x04,0x04,0x3c,0x04,0x04,0x3c,        //3
+   8                                                                  0x08,0x08,0x08,0x7c,0x48,0x28,0x18,0x08,        //4
+   9                                                                  0x3c,0x04,0x04,0x04,0x3c,0x20,0x20,0x3c,        //5
+  10                                                                  0x3c,0x24,0x24,0x24,0x3c,0x20,0x20,0x3c,        //6
+  11                                                                  0x04,0x04,0x04,0x04,0x04,0x04,0x04,0x3c,        //7
+  12                                                                  0x3c,0x24,0x24,0x24,0x3c,0x24,0x24,0x3c,        //8
+  13                                                                  0x3c,0x04,0x04,0x04,0x3c,0x24,0x24,0x3c,        //9
+  14                                                                  0x24,0x24,0x24,0x24,0x3c,0x24,0x24,0x18,//A
+  15                                                                  0x38,0x24,0x24,0x24,0x3c,0x24,0x24,0x38,//B
+  16                                                                  0x3c,0x20,0x20,0x20,0x20,0x20,0x20,0x3c,
+  17                                                                  0x18,0x24,0x20,0x20,0x20,0x20,0x24,0x18,
+  18                                                                  0x38,0x24,0x24,0x24,0x24,0x24,0x24,0x38,
+  19                                                                  0x3c,0x20,0x20,0x20,0x3c,0x20,0x20,0x3c,
+  20                                                                  0x20,0x20,0x20,0x20,0x3c,0x20,0x20,0x3c,
+  21                                                                  0x3c,0x24,0x24,0x2c,0x20,0x20,0x24,0x3c,
+  22                                                                  0x24,0x24,0x24,0x24,0x3c,0x24,0x24,0x24,
+  23                                                                  0x7c,0x10,0x10,0x10,0x10,0x10,0x10,0x7c,
+  24                                                                  0x00,0x24,0x28,0x30,0x30,0x30,0x28,0x24,
+  25                                                                  0x00,0x3c,0x20,0x20,0x20,0x20,0x20,0x20,
+  26                                                                  0x44,0x44,0x44,0x44,0x44,0x54,0x6c,0x44,
+  27                                                                  0x44,0x44,0x44,0x4c,0x54,0x64,0x44,0x44,
+  28                                                                  0x18,0x24,0x24,0x24,0x24,0x24,0x18,0x00,
+  29                                                                  0x20,0x20,0x20,0x20,0x38,0x24,0x24,0x38,
+  30                                                                  0x04,0x04,0x04,0x04,0x1c,0x24,0x24,0x1c,
+  31                                                                  0x22,0x24,0x28,0x30,0x28,0x24,0x24,0x38,
+  32                                                                  0xff,0x40,0x20,0x10,0x08,0x04,0x02,0xff
+  33                                                          };
+  34          /* Ham Delay */
+  35          void Fn_DELAY (unsigned int _vrui_Time)
+  36          {
+  37   1              while(_vrui_Time--);
+  38   1      }
+  39          /* Chuong trinh chinh */
+  40          
+  41          void main (void)
+  42          {
+  43   1              unsigned char i,k,l;
+  44   1              unsigned char j = 0;
+  45   1              while(1)
+  46   1              {
+  47   2                      /* Vong for cho 8 cot LED */
+  48   2                      for (i = 0; i < 240; i+=8)
+  49   2                      {
+  50   3                              for(l = 0;l<200;l++)
+  51   3                              {
+  52   4                                      for(k = i;k<(i+8);k++)
+  53   4                                      {
+  54   5                                              P2 = 0x00;
+  55   5                                              P3 = ~H[k];
+C51 COMPILER V9.00   LAB6                                                                  03/13/2019 22:44:59 PAGE 2   
+
+  56   5                                              P2 = (1<<j);
+  57   5                                              j++;
+  58   5                                              if(j==8)
+  59   5                                              {
+  60   6                                                      j = 0;
+  61   6                                                      
+  62   6                                              }
+  63   5                                              Fn_DELAY(50);
+  64   5                                      }
+  65   4                                              Fn_DELAY(100);
+  66   4                              }
+  67   3                      }
+  68   2              }
+  69   1      }
+  70          
+  71          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    108    ----
+   CONSTANT SIZE    =    240    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,78 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/18/2019  09:09:49  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE lab10bai1.obj TO lab4bai1
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  lab10bai1.obj (LAB10BAI1)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  lab4bai1 (LAB10BAI1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0012H     0008H     UNIT         ?PR?MAIN?LAB10BAI1
+            CODE    001AH     0003H     UNIT         ?PR?TEN_TUY_CHON?LAB10BAI1
+
+
+
+OVERLAY MAP OF MODULE:   lab4bai1 (LAB10BAI1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LAB10BAI1
+
+
+
+SYMBOL TABLE OF MODULE:  lab4bai1 (LAB10BAI1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LAB10BAI1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  B:00A8H.7       PUBLIC        EA
+  C:001AH         PUBLIC        ten_tuy_chon
+  C:0012H         PUBLIC        main
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  B:0090H.0       PUBLIC        LED
+  -------         PROC          MAIN
+  C:0012H         LINE#         5
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/18/2019  09:09:49  PAGE 2
+
+
+  C:0012H         LINE#         6
+  C:0014H         LINE#         8
+  C:0016H         LINE#         10
+  C:0018H         LINE#         13
+  -------         ENDPROC       MAIN
+  -------         PROC          TEN_TUY_CHON
+  C:001AH         LINE#         16
+  C:001AH         LINE#         19
+  C:001CH         LINE#         21
+  -------         ENDPROC       TEN_TUY_CHON
+  -------         ENDMOD        LAB10BAI1
+
+Program Size: data=9.0 xdata=0 code=29
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

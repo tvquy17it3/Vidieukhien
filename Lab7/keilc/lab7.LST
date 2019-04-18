@@ -1,0 +1,61 @@
+C51 COMPILER V9.00   LAB7                                                                  03/21/2019 14:26:24 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LAB7
+OBJECT MODULE PLACED IN lab7.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lab7.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          /* DINH NGHIA CAC CHAN */
+   3          sbit BUTTON = P3^7;
+   4          sbit LED = P2^7;
+   5          /* Khai bao bien Button_Old chua du lieu ngay truoc do cua nut nhan */
+   6          bit Button_Old;
+   7          void Delay (unsigned int vrui_Time)
+   8          {
+   9   1      while(vrui_Time--);
+  10   1      }
+  11          /* Chuong trinh chinh */
+  12          void main (void)
+  13          {
+  14   1      while(1)
+  15   1      {
+  16   2      /* Kiem tra nut nhan duoc xuong muc 0 hay chua*/
+  17   2      if(BUTTON == 0)
+  18   2      {
+  19   3      /* Tre mot khoang thoi gian nho */
+  20   3      Delay(100);
+  21   3      /* Kiem tra lai chac chan nut nhan co duoc nhan hay khong
+  22   3      
+  23   3      */
+  24   3      
+  25   3      if((BUTTON == 0) && (Button_Old == 1))
+  26   3      {
+  27   4      /* Xac nhan nut nhan duoc nhan va thuc hien lenh dao
+  28   4      
+  29   4      gia tri dau ra */
+  30   4      
+  31   4      LED = !LED;
+  32   4      }
+  33   3      }
+  34   2      /* Cap nhat gia tri ngay truoc do cua nut nhan */
+  35   2      Button_Old = BUTTON;
+  36   2      Delay(100);
+  37   2      }
+  38   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     42    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

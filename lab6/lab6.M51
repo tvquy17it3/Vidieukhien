@@ -1,0 +1,108 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/13/2019  22:45:00  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE lab6.obj TO lab6 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  lab6.obj (LAB6)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  lab6 (LAB6)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00F0H     UNIT         ?CO?LAB6
+            CODE    00F3H     0061H     UNIT         ?PR?MAIN?LAB6
+            CODE    0154H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0160H     000BH     UNIT         ?PR?_FN_DELAY?LAB6
+
+
+
+OVERLAY MAP OF MODULE:   lab6 (LAB6)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?LAB6
+
+?PR?MAIN?LAB6                  0008H    0001H
+  +--> ?CO?LAB6
+  +--> ?PR?_FN_DELAY?LAB6
+
+
+
+SYMBOL TABLE OF MODULE:  lab6 (LAB6)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LAB6
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0160H         PUBLIC        _Fn_DELAY
+  C:00F3H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/13/2019  22:45:00  PAGE 2
+
+
+  C:0003H         PUBLIC        H
+  -------         PROC          _FN_DELAY
+  D:0006H         SYMBOL        _vrui_Time
+  C:0160H         LINE#         35
+  C:0160H         LINE#         36
+  C:0160H         LINE#         37
+  C:016AH         LINE#         38
+  -------         ENDPROC       _FN_DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0003H         SYMBOL        k
+  D:0001H         SYMBOL        l
+  D:0008H         SYMBOL        j
+  -------         ENDDO         
+  C:00F3H         LINE#         41
+  C:00F3H         LINE#         42
+  C:00F3H         LINE#         44
+  C:00F6H         LINE#         45
+  C:00F6H         LINE#         46
+  C:00F6H         LINE#         48
+  C:00FEH         LINE#         49
+  C:00FEH         LINE#         50
+  C:0100H         LINE#         51
+  C:0100H         LINE#         52
+  C:0115H         LINE#         53
+  C:0115H         LINE#         54
+  C:0118H         LINE#         55
+  C:0120H         LINE#         56
+  C:012FH         LINE#         57
+  C:0131H         LINE#         58
+  C:0136H         LINE#         59
+  C:0136H         LINE#         60
+  C:0139H         LINE#         62
+  C:0139H         LINE#         63
+  C:0140H         LINE#         64
+  C:0143H         LINE#         65
+  C:014AH         LINE#         66
+  C:014EH         LINE#         67
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LAB6
+
+Program Size: data=10.0 xdata=0 code=363
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

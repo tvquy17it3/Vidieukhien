@@ -1,0 +1,135 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/14/2019  14:33:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE lab5.obj TO lab5 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  lab5.obj (LAB5)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  lab5 (LAB5)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000AH     UNIT         ?DT?LAB5
+            DATA    0012H     0002H     UNIT         _DATA_GROUP_
+            IDATA   0014H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0091H     UNIT         ?PR?MAIN?LAB5
+            CODE    0094H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0120H     0055H     UNIT         ?C?LIB_CODE
+            CODE    0175H     000FH     UNIT         ?PR?_FN_DELAY?LAB5
+            CODE    0184H     000DH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   lab5 (LAB5)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?LAB5
+  +--> ?C_INITSEG
+
+?PR?MAIN?LAB5                  0012H    0002H
+  +--> ?PR?_FN_DELAY?LAB5
+
+
+
+SYMBOL TABLE OF MODULE:  lab5 (LAB5)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LAB5
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/14/2019  14:33:01  PAGE 2
+
+
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0179H         PUBLIC        _Fn_Delay
+  B:00B0H.0       PUBLIC        LED1
+  B:00B0H.1       PUBLIC        LED2
+  B:00B0H.2       PUBLIC        LED3
+  B:00B0H.3       PUBLIC        LED4
+  C:0003H         PUBLIC        main
+  D:0008H         PUBLIC        LED7SEG
+  C:0175H         SYMBOL        L?0016
+  -------         PROC          L?0015
+  -------         ENDPROC       L?0015
+  C:0175H         SYMBOL        L?0016
+  -------         PROC          _FN_DELAY
+  D:0006H         SYMBOL        _vrui_Time
+  C:0179H         LINE#         8
+  C:0179H         LINE#         9
+  C:0179H         LINE#         10
+  C:0183H         LINE#         11
+  -------         ENDPROC       _FN_DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0003H         SYMBOL        i
+  D:0005H         SYMBOL        k
+  D:0002H         SYMBOL        d
+  D:0012H         SYMBOL        j
+  -------         ENDDO         
+  C:0003H         LINE#         12
+  C:0003H         LINE#         13
+  C:0003H         LINE#         16
+  C:0005H         LINE#         17
+  C:0007H         LINE#         18
+  C:0009H         LINE#         19
+  C:000BH         LINE#         20
+  C:000BH         LINE#         21
+  C:000BH         LINE#         22
+  C:0017H         LINE#         23
+  C:0017H         LINE#         25
+  C:001CH         LINE#         26
+  C:001CH         LINE#         28
+  C:002EH         LINE#         29
+  C:0039H         LINE#         30
+  C:003BH         LINE#         31
+  C:003EH         LINE#         32
+  C:0040H         LINE#         35
+  C:004BH         LINE#         36
+  C:0052H         LINE#         37
+  C:0054H         LINE#         38
+  C:0057H         LINE#         39
+  C:0059H         LINE#         41
+  C:0064H         LINE#         42
+  C:0066H         LINE#         43
+  C:0069H         LINE#         44
+  C:006BH         LINE#         46
+  C:0078H         LINE#         47
+  C:007AH         LINE#         48
+  C:007DH         LINE#         49
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/14/2019  14:33:01  PAGE 3
+
+
+  C:007FH         LINE#         51
+  C:0090H         LINE#         52
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LAB5
+
+  -------         MODULE        ?C?UIDIV
+  C:0120H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+Program Size: data=21.0 xdata=0 code=401
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
